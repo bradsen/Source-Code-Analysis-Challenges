@@ -11,7 +11,7 @@ def is_authenticated_user():
 
    return True
    #pass
-'''
+
 @app.route('/')
 def home():
     #If user is not authenticated
@@ -25,8 +25,6 @@ def home():
         return redirect(redirect_url)
 
     return 'Welcome to the homepage!'
-'''
-
 
 #How to mitigate open direct vulnerability
 #1.Remove parameter
@@ -39,8 +37,9 @@ def home():
 
     return redirect('/profile')
 '''
-'''
+
 #2.Implement Allowlist
+'''
 @app.route('/')
 def home():
     if not is_authenticated_user():
@@ -57,6 +56,7 @@ def home():
 
 '''
 #3.Implement Fixed Domain
+'''
 @app.route('/')
 def home():
     if not is_authenticated_user():
@@ -74,7 +74,7 @@ def home():
         return redirect(redirect_url)
 
     return 'Welcome to the home page!'
-
+'''
 
 
 @app.route('/login')
@@ -96,6 +96,3 @@ def aboutme():
 
 if __name__ == '__main__':
     app.run(debug=False)
-
-#Reference
-#https://owasp.org/www-community/attacks/Log_Injection
